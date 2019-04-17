@@ -1,40 +1,46 @@
 
-
+//Array that contains strings that computer can "randomly" choose from
 var alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "Z"]
 
+//variables that will be altered and effects will be seen on screen
 var wins = 0
 var losses = 0
 var guessesLeft = 5
 var lettersChosen = []
 
-
+//grabbing html content so I can later change it with javascript
 var winsText = document.getElementById("wins-text");
 var lossesText = document.getElementById("losses-text");
 var guessesLeftText = document.getElementById("guessesLeft-text");
 var lettersChosenText = document.getElementById("lettersChosen-text");
-// get img element from dom
 
+//randomly generates
+var computerGuess = alphabet[Math.floor(Math.random() * alphabet.length)];
+
+console.log(computerGuess);
+
+//key is pressed and key value compared to random guess
 document.onkeyup = function (event) {
-    
-    var userGuess = event.key;
+
+    var userGuess = event.key.toLocaleLowerCase();
+    if (lettersChosen.indexOf(userGuess) === -1) {
+        lettersChosen.push(event.key);
+
+        if (userGuess === computerGuess) {
+            wins++;
+            guessesLeft = 5;
+            lettersChosen = [];
+            document.getElementById("theImg").src = "assets/images/simpson-doughnut.png";
+        }
 
 
-    var computerGuess = alphabet[Math.floor(Math.random() * alphabet.length)];
+        if (userGuess !== computerGuess) {
+            guessesLeft--;
+            document.getElementById("theImg").src = "assets/images/homer-doh.png";
+
+        }
 
 
-
-    if (userGuess === computerGuess) {
-        wins++;
-        guessesLeft = 5;
-        lettersChosen = [];
-        document.getElementById("theImg").src = "assets/images/simpson-doughnut.png";
-    }
-
-
-    if (userGuess !== computerGuess) {
-        guessesLeft--;
-        lettersChosen.push(userGuess);
-        document.getElementById("theImg").src = "assets/images/homer-doh.png";
     }
 
 
@@ -45,14 +51,14 @@ document.onkeyup = function (event) {
         document.getElementById("theImg").src = "assets/images/homer-lose.gif";
     }
 
-    
+
     winsText.textContent = "Wins: " + wins;
     lossesText.textContent = "Losses: " + losses;
     guessesLeftText.textContent = "Guesses Left: " + guessesLeft;
     lettersChosenText.textContent = "Letters Chosen So Far: " + lettersChosen;
 }
 
-// init image to default, or it should be in the html anyway
+//This is here so text is there when page is loaded 
 winsText.textContent = "Wins: " + wins;
 lossesText.textContent = "Losses: " + losses;
 guessesLeftText.textContent = "Guesses Left: " + guessesLeft;

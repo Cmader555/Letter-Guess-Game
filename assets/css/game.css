@@ -1,5 +1,5 @@
 html {
-    background: url(https://static.independent.co.uk/s3fs-public/thumbnails/image/2017/12/04/09/simpsons-house.jpg) no-repeat center center fixed;
+    background: url(../images/simpsons-house.jpg) no-repeat center center fixed;
     background-size: cover;
     height: 100%;
     overflow: hidden;
@@ -15,6 +15,7 @@ html {
       font-family: 'Jua', sans-serif;
       line-height: 1.8; 
   }
+  
   h1 {
       color: white; 
       font-size: 1.9rem; 
