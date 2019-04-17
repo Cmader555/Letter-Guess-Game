@@ -1,0 +1,26 @@
+html {
+    background: url(https://static.independent.co.uk/s3fs-public/thumbnails/image/2017/12/04/09/simpsons-house.jpg) no-repeat center center fixed;
+    background-size: cover;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  body {
+      background-color: lightskyblue; 
+      width: 500px; 
+      margin: 20px auto; 
+      padding: 20px; 
+      border-radius: 5px; 
+      text-align: center; 
+      font-family: 'Jua', sans-serif;
+  }
+  h1 {
+      color: white; 
+  }
+
+  img {
+      width: 250px; 
+  }
+  .main {
+      color: white; 
+  }
