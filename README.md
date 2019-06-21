@@ -1,11 +1,6 @@
 ### Homer Simpson Letter Guessing Game
 
-<<<<<<< HEAD
 * This is a simple Letter Guessing Game made to show off my javascript skills 
-=======
-
-This is a simple Letter Guessing Game made to showcase my basic javascript skills. 
->>>>>>> 240e8d30481a865fb5c28503cfdcde3bf51b4727
   
 * You have 5 chances to guess the correct random letter by clicking on a key on your keyboard
 
